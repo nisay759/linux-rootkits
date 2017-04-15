@@ -1,4 +1,4 @@
-# PHide : Process Hider #
+# FHide : File Hider #
 
 This rootkit is similar to the
 [PHide](https://github.com/nisay759/linux-rootkits/tree/master/phide) rootkit.
