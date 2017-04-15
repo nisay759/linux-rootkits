@@ -5,4 +5,7 @@ You will find some rootkits that I wrote and other publicly available rootkits t
 
 These rootkits are meant to be used for educational purposes only.
 
-Visit my [blog](https://yassine.tioual.com) for more details.
+All these rootkits have been tested and are fully working on Linux version
+4.10.9
+
+Visit my [blog](https://yassine.tioual.com/index.php/category/rootkit/) for more details.
