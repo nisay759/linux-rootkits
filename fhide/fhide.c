@@ -1,7 +1,7 @@
 /*
  * Experimental RootKit
  * Simple RootKit for the EARL project
- * Functionality : Hiding processes
+ * Functionality : Hiding files starting witk "rk_"
  */
 
 #include <linux/init.h>
