@@ -21,6 +21,7 @@ Make sure you have un reverse shell script in `/usr/bin/reverse_shell.sh`
 ## Usage ##
 ```
 	$ echo "Hello world" | nc -u $target 1337
+```
 
 ## Removal ##
 ```
