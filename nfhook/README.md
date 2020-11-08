@@ -1,6 +1,7 @@
-# NFHook: NetFilter Hooking rootkit #
+# NFHook: NetFilter Hooking rootkit
 
-# No longer original, Modified by me to specifically work with my kernel version, which was by the time I wrote this, 5.9.1 on Arch.
+### No longer original,Modified by me to specifically work with my kernel version,
+### which was by the time I wrote this, 5.9.1 on Arch.
 
 
 
