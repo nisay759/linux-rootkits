@@ -54,7 +54,10 @@ This is an experimental rootkit. Use it at your own risks.
       
       
       
-References I learned from:
+## References I learned from:
+
 https://elixir.free-electrons.com/linux/v4.13.16/source/net/core/net_namespace.c#L37
+
 https://elixir.bootlin.com/linux/latest/source/include/linux/netfilter.h#L177
+
 https://www.linuxjournal.com/article/7184
