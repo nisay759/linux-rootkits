@@ -1,3 +1,5 @@
+# NOTE THIS IS NO LONGER THE ORIGINAL ROOTKITS FROM nisay759/linux-rootkits  THESE ARE MODIFIED #
+
 ### Improved to work with kernel 5.x and some other contributions, e.g on fhide.
 
 
