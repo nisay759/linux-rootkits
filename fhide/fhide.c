@@ -1,8 +1,4 @@
-/*
- * Experimental RootKit
- * Simple RootKit for the EARL project
- * Functionality : Hiding files starting witk "rk_"
- */
+/* NO LONGER ORIGINAL,  THIS IS A MODIFIED VERSION OF NISAY759'S ROOTKIT GET THE ORIGINAL FROM HERE nisay759/linux-rootkits  */
 
 //Changes:
 //Added the ability to input the prefix & optionally, the path when inserting the module, as arguments.
