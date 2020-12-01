@@ -1,10 +1,6 @@
+/* NO LONGER ORIGINAL,  THIS IS A MODIFIED VERSION OF NISAY759'S ROOTKIT GET THE ORIGINAL FROM HERE nisay759/linux-rootkits  */
 /*
- * Experimental RootKit
- * Simple RootKit for the EARL project
- */
 
-/*
-No longer original, get the original from here: https://github.com/nisay759/linux-rootkits
 
 This was modified, by me in order to improve & make this compile and run properly on my machine.
 
