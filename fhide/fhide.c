@@ -98,5 +98,5 @@ static void __exit fhide_exit(void)
 }
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Yassine Tioual");
+MODULE_AUTHOR("Modified version no longer original, see above for original repo!");
 MODULE_VERSION("0.1");
