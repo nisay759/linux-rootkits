@@ -1,4 +1,11 @@
+#### NOTE THIS IS NO LONGER THE ORIGINAL ROOTKITS FROM nisay759/linux-rootkits  THESE ARE MODIFIED #
+
+### Improved to work with kernel 5.x and some other contributions, e.g on fhide.
+
+
 # Linux rootkits
+
+
 This repo regroups my little precious collection of Linux 4.x kernel rootkits.
 
 You will find some rootkits that I wrote and other publicly available rootkits that I adapted for the latest version of the Linux kernel.
