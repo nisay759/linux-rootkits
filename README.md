@@ -7,4 +7,4 @@ These rootkits are by no mean real-world rootkits. They have been kept to the mi
 
 All these rootkits have been tested and are fully working on Linux versions 4.x.y
 
-Visit my [blog](https://yassine.tioual.com/index.php/category/rootkit/) for more details.
+Visit my [blog](https://yassine.tioual.com/) for more details.
