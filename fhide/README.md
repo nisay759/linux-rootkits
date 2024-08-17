@@ -2,8 +2,8 @@
 
 This rootkit is similar to the
 [PHide](https://github.com/nisay759/linux-rootkits/tree/master/phide) rootkit.
-It hides files beginning with the prefix « rk_ » that are located on the root of
-the filesystem « / »
+By default, it hides files beginning with the prefix « rk_ » that are located on the root of
+the filesystem « / ». But can be changed on the commandline while inserting the rootkit.
 
 ## Compilation ##
 ```
@@ -13,6 +13,8 @@ the filesystem « / »
 ## Installation ##
 ```
 	$ sudo insmod fhide.ko
+	or
+	$ sudo insmod fhide.ko prefix="hideme_" kpath="/tmp/"
 ```
 
 ## Removal ##

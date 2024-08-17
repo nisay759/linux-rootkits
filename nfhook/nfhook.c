@@ -71,17 +71,15 @@ static struct nf_hook_ops rk_pre_routing = {
 
 static int __init erk_init(void)
 {
-	pr_info("NFhook: LKM succefully loaded!\n");
-
-	nf_register_hook(&rk_pre_routing);
-
+	pr_info("NFhook: LKM successfully loaded!\n");
+	nf_register_net_hook(&init_net,&rk_pre_routing);
 	return 0;
 }
 
 static void __exit erk_exit(void)
 {
-	nf_unregister_hook(&rk_pre_routing);
-	pr_info("NFhook: LKM succefully unloaded!\n");
+	nf_unregister_net_hook(&init_net,&rk_pre_routing);
+	pr_info("NFhook: LKM successfully unloaded!\n");
 }
 
 MODULE_LICENSE("GPL");
